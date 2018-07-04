@@ -4,7 +4,9 @@ import matplotlib.pyplot as plt
 import random
 
 number_of_images = 50
-colors = [(255, 0, 0), (0,0,255), (0,255,0), (255,255,255), (128,128,128), (64,64,64), (128, 0, 0), (64, 0, 0), (0, 128, 0), (0, 64, 0), (0,0,128), (0,0,64)]
+#colors = [(255, 0, 0), (0,0,255), (0,255,0), (255,255,255), (128,128,128), (64,64,64), (128, 0, 0), (64, 0, 0), (0, 128, 0), (0, 64, 0), (0,0,128), (0,0,64)]
+colors = [(0,0,0), (16,16,16), (32,32,32), (48,48,48), (64,64,64), (80,80,80), (96,96,96), (112,112,112), (128,128,128), (160,160,160), (192,192,192),
+            (224,224,224), (255,255,255)]
 shapes = ["circle", "rectangle"]
 
 while number_of_images > 0:
@@ -23,7 +25,7 @@ while number_of_images > 0:
             randomColor = random.choice(colors)
             cv2.circle(img, (randomX, randomY), circleSize, randomColor, 15)
         number_of_elements = number_of_elements - 1
-    path = "Markers/mark" + str(number_of_images) + ".png"
+    path = "Markers-BW/mark" + str(number_of_images) + ".png"
     cv2.imwrite(path, img)
     number_of_images = number_of_images - 1
 
